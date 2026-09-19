@@ -1,5 +1,7 @@
 # Ex06 BMI Calculator
-## Date: 
+## Name: MIRTYUNJAY S
+## Reg No: 212224040190
+## Date: 08/09/2026
 
 ## AIM
 To develop a responsive and interactive Body Mass Index (BMI) Calculator using React that allows users to input their height and weight, and calculates their BMI to categorize their health status (e.g., Underweight, Normal, Overweight, Obese).
@@ -64,10 +66,225 @@ Create routing structure with react-router-dom:
 <li>Add styling using CSS or Tailwind.</li>
 
 ## PROGRAM
+App.js
+```
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
+import Home from "./home";
+import BMI from "./bmi";
+import Result from "./result";
+
+function App() {
+  return (
+    <div>
+
+      <nav className="navbar">
+
+        <h2>BMI Calculator</h2>
+
+        <div>
+          <Link to="/">Home</Link>
+
+          <Link to="/bmi">
+            BMI Calculator
+          </Link>
+        </div>
+
+      </nav>
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        <Route
+          path="/bmi"
+          element={<BMI />}
+        />
+
+        <Route
+          path="/result"
+          element={<Result />}
+        />
+
+      </Routes>
+
+    </div>
+  );
+}
+
+export default App;
+```
+App.css
+```
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+}
+
+/* Navigation */
+
+.navbar {
+  background: #222;
+  color: white;
+
+  padding: 15px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+
+  margin-left: 20px;
+}
+
+/* Main container */
+
+.container {
+  min-height: 85vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+
+.card {
+  background: white;
+
+  width: 400px;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.15);
+}
+
+.card h1 {
+  text-align: center;
+}
+
+/* Form */
+
+label {
+  display: block;
+
+  margin-top: 15px;
+  margin-bottom: 8px;
+
+  font-weight: bold;
+}
+
+input,
+select {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+.input-group {
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 2;
+}
+
+.input-group select {
+  flex: 1;
+}
+
+/* Button */
+
+button {
+
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 20px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #333;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* Error */
+
+.error {
+  color: red;
+}
+
+/* Home */
+
+.home {
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 40px;
+}
+
+.home p {
+  font-size: 18px;
+}
+
+/* Result */
+
+.result {
+  text-align: center;
+}
+```
 
 
 ## OUTPUT
+
+<img width="1108" height="658" alt="Screenshot 2026-09-08 190328" src="https://github.com/user-attachments/assets/fc8e1849-991e-4c7f-a8a7-b1288c7bdbdb" />
 
 
 
